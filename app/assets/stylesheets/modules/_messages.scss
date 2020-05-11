@@ -39,7 +39,6 @@
     padding-left: 20px; 
     padding-top: 20px;
     text-decoration: none;
-    // overflow-y: scroll;
     &__name{
       font-size: 15px;
     }
@@ -96,9 +95,7 @@
     padding-top: 35px;
     padding-bottom: 46px;
     padding-left: 40px;
-    // overflow-y: scroll;
     &__box{
-      // padding-bottom: 40px;
       &__header{
         display: flex;
         &__name{
