@@ -1,0 +1,16 @@
+.chat-side
+  .chat-user
+    .chat-user__name
+      %t HataToshiyuki
+    .chat-user__icon
+      .chat-user__icon__left
+        = link_to "#" do
+          = icon('far', 'edit',  class: "chat-user__icon__left")
+      .chat-user__icon__right
+        = link_to "#" do
+          = icon('fas', 'cog',  class: "chat-user__icon__right")
+  .chat-group
+    .chat-group__name
+      %t techcamp
+    .chat-group__messages
+      %t まだメッセージがありません
