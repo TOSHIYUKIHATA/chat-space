@@ -2,27 +2,22 @@
   .chat-header
     .chat-header__left
       .chat-header__left__user
-        %t ユーザー名:
+        = @group.name
       .chat-header__left__group
-        %t グループ名:
+        Member：
+        - @group.users.each do |user|
+          = user.name
     .chat-header__right
-      %t EDIT
+      = link_to "Edit", edit_group_path(@group),class: "border-none", data:{"turbolinks" => false}, style: "color:#38AEF0"
 
   .chat-body
-    .chat-body__box
-      .chat-body__box__header
-        .chat-body__box__header__name
-          %t TOSHIYUKI
-        .chat-body__box__header__time
-          %t **/**/**(*) **:**:**
-      .chat-body__box__message
-        %t TEST
+    = render @messages
 
   .chat-form
-    %form.new_message
+    =form_for [@group, @message] do |f|
       .input-box
-        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image"}
+        = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+        = f.label :image, class: 'input-box__image' do
           = icon('far', 'image')
-          %input{type: "file",class: "input-box__image__file"}
-      %input{type: "sumbit",class: "submit-btn",value: "Send"}
+          = f.file_field :image, class: 'filesend'
+      = f.submit "Send", class: 'submit-btn'

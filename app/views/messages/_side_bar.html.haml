@@ -11,8 +11,8 @@
           = icon('fas', 'cog',  class: "chat-user__icon__right")
   .chat-group
     - current_user.groups.each do |group|
-      = link_to "#", class: "border-none" do
+      = link_to group_messages_path(group), class: "border-none" do
         .chat-group__name
           = group.name
         .chat-group__messages
-          %t まだメッセージがありません
+          = group.show_last_message
