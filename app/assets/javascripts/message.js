@@ -3,22 +3,22 @@ $(function(){
   function buildHTML(message){
     if ( message.image ) {
       var html =
-      `<div class="chat-body__box" data-message-id=${message.id}>
-          <div class="chat-body__box__header">
-            <div class="chat-body__box__header__name">
-              ${message.user_name}
-            </div>
-            <div class="chat-body__box__header__time">
-              ${message.created_at}
-            </div>
-          </div>
-          <div class="chat-body__box__message">
-            <p class="chat-body__box__message__content">
-              ${message.content}
-            </p>
-          </div>
-          <img src=${message.image} >
-        </div>`
+                `<div class="chat-body__box" data-message-id=${message.id}>
+                  <div class="chat-body__box__header">
+                    <div class="chat-body__box__header__name">
+                      ${message.user_name}
+                    </div>
+                    <div class="chat-body__box__header__time">
+                      ${message.created_at}
+                    </div>
+                  </div>
+                    <div class="chat-body__box__message">
+                    <div class="chat-body__box__message__content">
+                      ${message.content}
+                  </div>
+                    <img class="lower-message__image" src=${message.image}>
+                  </div>
+                </div>`
     } 
     else {
       var html =
@@ -37,15 +37,15 @@ $(function(){
             </p>
           </div>
         </div>`
-      return html;
     }
+    return html;
   }
 
 
 $('#new_message').on('submit', function(e){
   e.preventDefault();
   var formData = new FormData(this);
-  var url = $(this).attr('action')
+  var url = $(this).attr('action');
   $.ajax({
     url: url,
     type: "POST",
@@ -64,7 +64,7 @@ $('#new_message').on('submit', function(e){
     .fail(function(data){
       alert("メッセージの送信に失敗しました！");  
     })
-  })
+  });
 
   var reloadMessages = function() {
     var last_message_id = $('.chat-body__box:last').data("message-id");

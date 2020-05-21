@@ -18,7 +18,7 @@
     }
     &__icon{
       float: right;
-      font-size: 20px;
+      font-size: 16px;
       padding-right: 20px;
       line-height: 100px;
       display: flex;
@@ -27,7 +27,7 @@
         padding-right: 5px;
       }
       &__right{
-          color: #ffffff;
+        color: #ffffff;
       }
     }
   } 
@@ -87,10 +87,13 @@
       text-align: center;
       color: #38aef0;
       font-size: 16px;
-      border: 3px solid #eeeeee;
+      border: 1px solid #38aef0;
       text-decoration: none;
       margin-top: 30px;
       cursor: pointer;
+      .border-none{
+        text-decoration: none;
+      }
     }
   }
   .chat-body{
@@ -98,7 +101,6 @@
     box-sizing: border-box;
     height: calc(100vh - 100px - 90px);
     padding-top: 35px;
-    padding-bottom: 46px;
     padding-left: 40px;
     overflow-y: scroll;
     &__box{
@@ -119,6 +121,7 @@
         padding-top: 12px;
         color: #434A54;
         font-size: 14px;
+        padding-bottom: 46px;
       }
     }
   }
@@ -129,7 +132,7 @@
     form{
       display: flex;
       .input-box{
-        width: 100%;
+        width: 100vw;
         display: flex;
         position: relative;
         &__text{
@@ -139,6 +142,7 @@
           border: none;
           padding-left: 15px;
           color: #434a54;
+          font-size: inherit;
           border-style: none;
         }
         &__image{
@@ -146,7 +150,7 @@
           float: left;
           padding: 0 10px;
           height: 50px;
-          font-size: 20px;
+          font-size: 1.3rem;
           line-height: 50px;
           cursor: pointer;
           .filesend {
@@ -161,7 +165,7 @@
       margin-left: 15px;
       padding: 0 30px;
       background-color: #38aef0;
-      font-size: 14px;
+      font-size: inherit;
       color: #e1e1e1;
       text-align: center;
       cursor: pointer;
